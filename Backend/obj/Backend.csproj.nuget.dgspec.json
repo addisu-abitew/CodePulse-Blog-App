@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Workspace\\Angular and .NET\\CodePulse\\Backend\\Backend.csproj": {}
+    "D:\\Workspace\\Angular and .NET\\CodePulse\\backend\\Backend.csproj": {}
   },
   "projects": {
-    "D:\\Workspace\\Angular and .NET\\CodePulse\\Backend\\Backend.csproj": {
+    "D:\\Workspace\\Angular and .NET\\CodePulse\\backend\\Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Workspace\\Angular and .NET\\CodePulse\\Backend\\Backend.csproj",
+        "projectUniqueName": "D:\\Workspace\\Angular and .NET\\CodePulse\\backend\\Backend.csproj",
         "projectName": "Backend",
-        "projectPath": "D:\\Workspace\\Angular and .NET\\CodePulse\\Backend\\Backend.csproj",
+        "projectPath": "D:\\Workspace\\Angular and .NET\\CodePulse\\backend\\Backend.csproj",
         "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\Workspace\\Angular and .NET\\CodePulse\\Backend\\obj\\",
+        "outputPath": "D:\\Workspace\\Angular and .NET\\CodePulse\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
