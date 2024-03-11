@@ -16,7 +16,8 @@ var Configuration = builder.Configuration;
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
         options.UseNpgsql(Configuration.GetConnectionString("CodePulseConnectionString")));
 
-builder.Services.AddScoped<ICategoryRepository, CatogoryRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IBlogRepository, BlogRepository>();
 
 var app = builder.Build();
 

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { CategoryService } from '../services/category.service';
-import { Category } from '../../../models/category.model';
+import { Category } from '../models/category.model';
 import { CommonModule } from '@angular/common';
 import { Observable, Subscription } from 'rxjs';
 
@@ -19,9 +19,9 @@ export class CategoryListComponent implements OnInit, OnDestroy {
 
   onDelete(id: string) {
     this.deleteSubscription = this.categoryService.deleteCategory(id).subscribe({
-      next: (res) => {
+      next: () => {
         console.log('Category Deleted Successfully.');
-        this.router.navigateByUrl('/admin/categories');
+        window.location.reload();
       },
       error: (err) => {
         console.log('Something went wrong!')

@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CodePulse.Backend.Repositories.Implementations;
 
-public class CatogoryRepository : ICategoryRepository
+public class CategoryRepository : ICategoryRepository
 {
     private readonly ApplicationDbContext dbContext;
 
-    public CatogoryRepository(ApplicationDbContext dbContext)
+    public CategoryRepository(ApplicationDbContext dbContext)
     {
         this.dbContext = dbContext;
     }

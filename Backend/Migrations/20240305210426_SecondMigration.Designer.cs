@@ -3,6 +3,7 @@ using System;
 using CodePulse.Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Backend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240305210426_SecondMigration")]
+    partial class SecondMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,21 +24,6 @@ namespace Backend.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-
-            modelBuilder.Entity("BlogCategory", b =>
-                {
-                    b.Property<Guid>("BlogsId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("CategoriesId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("BlogsId", "CategoriesId");
-
-                    b.HasIndex("CategoriesId");
-
-                    b.ToTable("BlogCategory");
-                });
 
             modelBuilder.Entity("CodePulse.Backend.Models.Domain.Blog", b =>
                 {
@@ -95,21 +83,6 @@ namespace Backend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Catogories");
-                });
-
-            modelBuilder.Entity("BlogCategory", b =>
-                {
-                    b.HasOne("CodePulse.Backend.Models.Domain.Blog", null)
-                        .WithMany()
-                        .HasForeignKey("BlogsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CodePulse.Backend.Models.Domain.Category", null)
-                        .WithMany()
-                        .HasForeignKey("CategoriesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
